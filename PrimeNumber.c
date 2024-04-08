@@ -2,7 +2,7 @@
 #include<stdio.h>
 void main()
 {
-    int n,c=0,i;
+    int n,i,c=0;
     printf ("Enter a Number:");
     scanf ("%d",&n);
     for (i=2;i<n;i++)
