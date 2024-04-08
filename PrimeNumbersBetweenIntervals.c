@@ -1,37 +1,42 @@
 #include<conio.h>
 #include<stdio.h>
-void main()
+void prime (int l,int u)
 {
-    int n1,n2,i,j,c,c1=0;
-    printf ("Enter Intervals\n\n");
-    printf ("Enter Lower Limit:");
-    scanf ("%d",&n1);
-    printf ("Enter Upper Limit:");
-    scanf ("%d",&n2);
-    printf ("\nPrime Numbers Between %d and %d are\n\n",n1,n2);
-    for (i=n1;i<=n2;i++)
+    int i,j,c,t=0;
+    for (i=l;i<=u;i++)
     {
         c=0;
-        for (j=1;j<=i;j++)
+        for (j=2;j<i;j++)
         {
             if (i%j==0)
             {
                 c++;
             }
         }
-        if (c==2)
+        if (c==0)
         {
+            t++;
             printf ("%d,",i);
-            c1++;
         }
     }
-    if (c1==0)
+    if (t==0)
     {
-        printf ("No Prime Numbers Between %d and %d",n1,n2);
+        printf ("No Prime Numbers between %d and %d",l,u);
     }
     else
     {
         printf ("\b ");
     }
+}
+void main()
+{
+    int l,u;
+    printf ("Enter Limit\n\n");
+    printf ("Enter Lower Limit:");
+    scanf ("%d",&l);
+    printf ("Enter Upper Limit:");
+    scanf ("%d",&u);
+    printf ("\nPrime Numbers Between %d and %d are\n\n",l,u);
+    prime (l,u);
     getch();
 }
